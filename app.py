@@ -69,5 +69,6 @@ def ocr_endpoint():
     return render_template('index.html', annotated_filename=annotated_filename, ocr_text=ocr_text,confidence=total_confidence)
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)
