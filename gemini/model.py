@@ -28,7 +28,7 @@ class Model():
         
     def getMedicine(self, text):
         response = self.model.generate_content(f"Hey you are supposed to read the text and extract only the medicinename and provide it as medicine: the name you extracted and no other information apart from that Here is the text '{text}' and present the response as medicine:response")
-        return response.text.split(":")[1].strip()
+        return response.text.split(":")
         
         
     
