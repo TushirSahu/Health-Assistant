@@ -5,6 +5,7 @@ import os
 import preprocess
 import numpy as np
 import base64
+from gemini import docPR
 
 app = Flask(__name__)
 
@@ -66,7 +67,15 @@ def ocr_endpoint():
             cv2.polylines(img, [np.array(polygon)], True, (255, 0, 0), 1)
     # cv2.imwrite(annotated_filename, img)
     os.remove(filename)
+    # add gemini mprocessing here
     return jsonify({'text': ocr_text, 'confidence': total_confidence})
+
+@app.route('/gem')
+def gem():
+    print(docPR("OurPart ideass Colour.Titanium Dosage:Asdire Cefixime Tablets IP 100mg Store protectea temperature no Keep out of react CEFIX-100 -00 Each film coated tablet contains Cefixime IP(as Trihydrate) equivalent.to Anhydrous Cefixime Excipients...... M.L.JK/02116-1112 Marketed by CIPLA LTD 5020 Cipla House,Peninsula Business park Manufactured byZeiss Ganpatrao Kadam Marg,Lower Parel, Cipla Unit IIIGC,SIDCOPt Mumbai-400 013,INDIA jammu-184121(J&K) PY Colour:Titanium Di efiximealetsIPoomg Dosage:As directe Store protected ir temperature not CEFIX 100- eep out of reach"))
+    return jsonify({'text': 'Hello World!'})
+    
+    
 
 
 

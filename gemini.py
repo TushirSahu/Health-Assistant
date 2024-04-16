@@ -3,7 +3,7 @@ import requests
 
 API_KEY = "AIzaSyCThmnZHNxGR_FrJ1w0heWE2bWQVNaMuWI"
 
-def docPR(prompt, API_KEY):
+def docPR(prompt):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={API_KEY}"
     headers = {
         "Content-Type": "application/json",
