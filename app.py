@@ -5,7 +5,7 @@ import os
 import preprocess
 import numpy as np
 import base64
-from gemini import docPR
+from model.gemini import docPR
 
 app = Flask(__name__)
 
