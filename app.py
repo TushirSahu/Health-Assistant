@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
-UPLOAD_FOLDER = 'static'
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# UPLOAD_FOLDER = 'static'
+# if not os.path.exists(UPLOAD_FOLDER):
+#     os.makedirs(UPLOAD_FOLDER)
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
@@ -64,11 +64,13 @@ def ocr_endpoint():
         for text_info in data:
             polygon = [tuple(map(int, point)) for point in text_info[0]]
             cv2.polylines(img, [np.array(polygon)], True, (255, 0, 0), 1)
-    cv2.imwrite(annotated_filename, img)
-
-    return render_template('index.html', annotated_filename=annotated_filename, ocr_text=ocr_text,confidence=total_confidence)
+    # cv2.imwrite(annotated_filename, img)
+    os.remove(filename)
+    return jsonify({'text': ocr_text, 'confidence': total_confidence})
 
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
