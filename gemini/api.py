@@ -1,0 +1,14 @@
+from gtts import gTTS 
+# import gemini
+import os 
+  
+
+mytext = 'OurPart ideass Colour.Titanium Dosage:Asdire Cefixime Tablets IP 100mg Store protectea temperature no Keep out of react CEFIX-100 -00 Each film coated tablet contains Cefixime IP(as Trihydrate) equivalent.to Anhydrous Cefixime Excipients...... M.L.JK/02116-1112 Marketed by CIPLA LTD 5020 Cipla House,Peninsula Business park Manufactured byZeiss Ganpatrao Kadam Marg,Lower Parel, Cipla Unit IIIGC,SIDCOPt Mumbai-400 013,INDIA jammu-184121(J&K) PY Colour:Titanium Di efiximealetsIPoomg Dosage:As directe Store protected ir temperature not CEFIX 100- eep out of reach'
+  
+language = 'en'
+  
+myobj = gTTS(text=mytext, lang=language, slow=False) 
+  
+myobj.save("welcome.mp3") 
+
+os.system("start welcome.mp3") 

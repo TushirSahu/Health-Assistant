@@ -5,6 +5,7 @@ import os
 import preprocess
 import numpy as np
 import base64
+import ocr_
 from ..gemini.model import Model
 
 app = Flask(__name__)
@@ -24,6 +25,14 @@ geminiModel = Model()
 @app.route('/')
 def upload_form():
     return render_template('index.html')
+
+@app.route('/dummy', methods=['GET','POST'])
+def ocr_text(image_path):
+    text, accuracy = ocr_.ocr_text(image_path)
+    return jsonify({'text': text, 'accuracy': accuracy})
+    
+
+
 
 @app.route('/ocr', methods=['POST'])
 def ocr_endpoint():
