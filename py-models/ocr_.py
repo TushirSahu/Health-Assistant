@@ -2,6 +2,7 @@ from paddleocr import PaddleOCR
 import cv2
 import os
 import preprocess
+import psutil
 import numpy as np
 
 def ocr_text(image_path):
@@ -30,11 +31,15 @@ def ocr_text(image_path):
             cv2.polylines(img, [np.array(polygon)], True, (255, 0, 0), 1)
     # cv2.imwrite(annotated_filename, img)
 
-    os.remove(image_path)
+    # os.remove(image_path) 
     return ocr_text, total_confidence
 
 
 if __name__=="__main__":
-    ocr_text, accuracy = ocr_text()
-    print(f"Text Detected {ocr_text},Accuracy,{accuracy},%")
+    process = psutil.Process()
+    
+    ocr_text1, accuracy = ocr_text('download.jpg')
+    print(f"Text Detected {ocr_text1},Accuracy,{accuracy},%")
     print("OCR completed successfully.")
+    print(process.memory_info().rss)  # in bytes
+

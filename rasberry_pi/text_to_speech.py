@@ -14,8 +14,8 @@ print(mytext)
 
 myobj = gTTS(text=mytext, lang=language, slow=False) 
   
-myobj.save("welcome.mp3") 
+myobj.save("welcome1.wav") 
 
-os.system("start welcome.mp3") 
+# os.system("start welcome1.wav") 
 process = psutil.Process()
 print(process.memory_info().rss)  # in bytes
