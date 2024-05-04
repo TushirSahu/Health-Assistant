@@ -61,16 +61,16 @@ export const generateCronTabFile = (req: Request, res: Response) => {
     res.send(cronTabFile);
 
 
-    exec('echo "' + cronTabFile + '" > cronTab.txt', (error: any, stdout: any, stderr: any) => {
-        if (error) {
-            console.error(`Error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`File content written successfully to cronTab.txt`);
-    });
+    // exec('echo "' + cronTabFile + '" > cronTab.txt', (error: any, stdout: any, stderr: any) => {
+    //     if (error) {
+    //         console.error(`Error: ${error.message}`);
+    //         return;
+    //     }
+    //     if (stderr) {
+    //         console.error(`stderr: ${stderr}`);
+    //         return;
+    //     }
+    //     console.log(`File content written successfully to cronTab.txt`);
+    // });
 }
 

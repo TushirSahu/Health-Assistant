@@ -162,3 +162,5 @@ cython_debug/
 node_modules
 
 welcome.mp3
+# Local Netlify folder
+.netlify
