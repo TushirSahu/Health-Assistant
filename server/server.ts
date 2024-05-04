@@ -4,10 +4,18 @@ import bodyParser from "body-parser";
 import { generateCronTabFile } from "./controllers/generateCronTabFile";
 import GEMINIAPI from "./models/gemini";
 import { geminiAPI } from "./controllers/geminiAPI";
+import cors from 'cors'
+
+
 
 // Create Express app
 const app = express();
 const port = 3000;
+
+app.use(cors({
+  origin: "*",
+
+}));
 
 // Middleware for parsing JSON bodies
 app.use(bodyParser.json());
