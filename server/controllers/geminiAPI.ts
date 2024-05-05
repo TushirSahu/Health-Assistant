@@ -10,7 +10,7 @@ export const geminiAPI = async (req: Request, res: Response) => {
       message: response,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({
       status: "error",
       message: error,
