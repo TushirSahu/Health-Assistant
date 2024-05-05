@@ -23,18 +23,5 @@ def handle_request():
     # Return the response from the backend to the frontend
     return jsonify(response.json()), response.status_code
 
-# @app.route('/api/generate', methods=['POST'])
-# def handle_request():
-#     # Get the data from the frontend request
-#     data = request.json
-    
-#     # Forward the request to your backend
-#     backend_url = "https://edp-iobf.onrender.com/api/generate" 
-#     response = requests.post(backend_url, json=data)
-    
-#     print(response) 
-    
-#     # Return the response from the backend to the frontend
-#     return jsonify(response.json()), response.status_code
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
