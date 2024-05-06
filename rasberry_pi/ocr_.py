@@ -69,17 +69,17 @@ def ocr_text(image_path):
             cv2.polylines(img, [np.array(polygon)], True, (255, 0, 0), 1)
     # cv2.imwrite(annotated_filename, img)
     # os.remove(image_path) 
-    #if(getMedInfo(ocr_text) != ""): 
-        #engToHindi(getMedInfo(ocr_text),"hi")
+    if(getMedInfo(ocr_text) != ""): 
+        engToHindi(getMedInfo(ocr_text),"hi")
         #integrate speaker
+    # engToHindi((ocr_text),"hi")
     wav_writer(file_path='test.wav')
     mp3_file_path = "test.wav"  # Replace this with the path to your MP3 file
     play_audio(mp3_file_path)
-    return ocr_text, total_confidence
+    return 
 
     
-if __name__=="__main__":
-    process = psutil.Process()
+
     
     
     
