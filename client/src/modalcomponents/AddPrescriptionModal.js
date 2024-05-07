@@ -159,7 +159,7 @@ const AddPrescriptionModal = ({ isOpen, onClose, patient }) => {
     
     console.log('Transformed Medicine Inputs:', transformedMedicineInputs);
     try {
-      const response = await fetch("https://c45d-14-139-241-214.ngrok-free.app/api/crontab", {
+      const response = await fetch("https://dcea-2401-4900-51e6-485b-4c44-8704-aafe-69cd.ngrok-free.app/api/crontab", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -179,13 +179,13 @@ const AddPrescriptionModal = ({ isOpen, onClose, patient }) => {
   };
   
   const daysOfWeek = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 
   return (
@@ -236,7 +236,7 @@ const AddPrescriptionModal = ({ isOpen, onClose, patient }) => {
                     <p>
                       Number of times in a day: &nbsp;
                       <select
-                        className="px-4 py-2 w-20 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                        className="px-1.5 py-2 w-20 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                         name="frequency"
                         value={medicine.frequency}
                         onChange={(event) => handleInputChange(index, event)}
